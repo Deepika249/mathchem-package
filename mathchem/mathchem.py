@@ -1,5 +1,8 @@
 import numpy as np
 
+import mathchem
+g = graphs.PathGraph(5)
+m = mathchem.Mol(g.graph6_string())
 
 class Mol ():
     r"""
@@ -386,7 +389,7 @@ class Mol ():
         Alias : L
         """
         if self.__L == []:
-            self.__L = np.diag(self.degrees()) - np.matrix(self.__A);
+            self.__L = np.diag(np.power( self.degrees(), 2)) - np.matrix(self.__A);
         return self.__L
         
     L = laplacian_matrix
@@ -1673,4 +1676,5 @@ class Mol ():
         """ Adriatic index: symmetric division twodi index"""
         return self.adriatic_index(1, 3, 8, 2)
 
-    
+    L.laplacian_matrix()
+    g.show()
