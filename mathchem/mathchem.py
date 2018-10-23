@@ -386,7 +386,7 @@ class Mol ():
         Alias : L
         """
         if self.__L == []:
-            self.__L = np.diag(self.degrees()) - np.matrix(self.__A);
+            self.__L = np.diag((self.degrees()^2)) - np.matrix(self.__A);
         return self.__L
         
     L = laplacian_matrix
