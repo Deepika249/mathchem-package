@@ -1,5 +1,6 @@
 import numpy as np
-
+import mathchem
+g = graphs.CycleGraph(3)
 
 class Mol ():
     r"""
@@ -1673,4 +1674,5 @@ class Mol ():
         """ Adriatic index: symmetric division twodi index"""
         return self.adriatic_index(1, 3, 8, 2)
 
-    
+    g.show()
+    g.laplacian_matrix()
